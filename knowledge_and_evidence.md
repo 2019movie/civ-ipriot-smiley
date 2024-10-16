@@ -353,11 +353,12 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   2. **Usage of Color Variables:**
 
      1. In which classes are the color variables used?
-        > Your answer here
+        > Smiley class use colour variables. Subclass like Happy and Sad can access the colour variables directly.
+> draw_eyes and draw_mouth methods inherited from Smiley use colour variables.
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
-     > Your answer here
+     > The easiest way to assign GREEN colour to all pixels can add a line of code in __init__ in Smiley.  Replace the code for self.pixels into [self.GREEN] * 64
 
   Here's a revised version of the "Flexible Colors – Step 1" section for the smiley project, incorporating your specifications for formatting and content updates:
 
