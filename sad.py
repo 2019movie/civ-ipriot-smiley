@@ -1,8 +1,8 @@
 from smiley import Smiley
-from blinkable import Blinkable
+#from blinkable import Blinkable
 import time
 
-class Sad(Smiley, Blinkable):
+class Sad(Smiley):
     def __init__(self):
         super().__init__()
 
@@ -36,12 +36,6 @@ class Sad(Smiley, Blinkable):
 
         :param delay: Delay between blinks (in seconds)
         """
-        self.draw_eyes(wide_open=False)
-        self.show()
-        time.sleep(delay)
-        self.draw_eyes(wide_open=True)
-        self.show()
-        time.sleep(delay)
         self.draw_eyes(wide_open=False)
         self.show()
         time.sleep(delay)

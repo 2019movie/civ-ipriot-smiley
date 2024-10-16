@@ -308,7 +308,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 
-  > Your answer here
+  > The updated Sad class implements the blink() method. The implementation use blink() method with default parameter for delay between blinks set to 0.25 seconds. It performs correctly from testing.
 
   ### If It Walks Like a Duck…
 
@@ -316,23 +316,23 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   1. **Class Type Analysis:** What kind of class is `Blinkable`? Inspect its superclass for clues about its classification.
 
-     > Your answer here
+     > Blinkable class is Abstract Base Class, if sad inherited from it, subclass will prevent instantiation without define a blink method.
 
   2. **Class Implementation:** `Blinkable` is a class intended to be implemented by other classes. What generic term describes this kind of class, which is designed for implementation by others? **Clue**: Notice the lack of any concrete implementation and the naming convention.
 
-  > Your answer here
+  > Blinkable is an abstract class because it inherits from ABC (Abstract Base class), it also contains abstract method "blink()" that subclasses must implement.
 
   3. **OO Principle Identification:** Regarding your answer to question (2), which Object-Oriented (OO) principle does this represent? Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
 
-  > Your answer here
+  > The Blinkable class represent abstraction principle, it provide definition of common subclass without specific implementation details such as generic blink() method.
 
   4. **Implementation Flexibility:** Explain why you could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
-  > Your answer here
+  > Implementing a blink() method directly in Sad class and use inherited methods from Smiley class without rely on Blinkable. This approach adheres to object oriented principles while allow flexibility and customised behaviour.
 
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
 
-  > Your answer here
+  > Multiple inheritance is the capability for a class to inherit from multiple parent classes. It is feasibile in Python because Pythone is dynamically typed. Types are checked at runtime rather than compile time which allow multiple inheritance without strict constrains on types of classes.
 
   ***
 
@@ -345,9 +345,9 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   1. **Defined Colors and Their Location:**
 
      1. Which colors are defined and in which class(s)?
-        > Your answer here
+        > Colours are defined in Smiley Class. E.g. WHITE = (255,255,255)
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
-        > Your answer here
+        > They are Class Variables, each colour contains 3 integer values as a tuple. They are immutable throughout the program execution as Tuple in Python are immutable data structure after creation.
      3. Add the color blue to the appropriate class using the appropriate format and values.
 
   2. **Usage of Color Variables:**
