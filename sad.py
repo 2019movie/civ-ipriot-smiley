@@ -30,14 +30,18 @@ class Sad(Smiley):
                 eyes = self.YELLOW
             self.pixels[pixel] = eyes
 
-    def blink(self, delay=0.25):
+    def blink(self, delay=0.2):
         """
-       Blinks the smiley's eyes once
+       Blinks the smiley's eyes twice
 
         :param delay: Delay between blinks (in seconds)
         """
-        self.draw_eyes(wide_open=False)
-        self.show()
-        time.sleep(delay)
-        self.draw_eyes(wide_open=True)
-        self.show()
+        wide_open = True
+        for times in range(4):
+            if (wide_open):
+                wide_open = False
+            else:
+                wide_open = True
+            self.draw_eyes(wide_open)
+            self.show()
+            time.sleep(delay)

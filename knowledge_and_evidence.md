@@ -93,7 +93,7 @@ Address the following tasks and questions based on the code provided in this rep
 3. Run the project locally by executing the `main.py` file
 4. Evidence this by providing screenshots of the project directory structure and the output of the `main.py` file
 
-![Local Execution (INSERT YOUR SCREENSHOT)](screenshots/CREATE_A_SCREENSHOT_OF_YOUR_local_setup.png)
+![screenshot1.2.png](screenshot/screenshot1.2.png)
 
 If you are running on a Raspberry Pi, you can use the following command to run the project and then screenshot the result:
 
@@ -177,9 +177,22 @@ python3 main.py
 
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
 
-> Pep8 coding style in used. Naming conventions use CamelCash, methods and variables use snake_case.
-> Each class has clear responsibility, documentation (such as docstrings)
-> sense_hat.py is likely the same coding style which is Pep8. The naming conventions and docstrings documentation shows that.
+>Pep8 coding style in use.
+>
+>From the usage of SenseHat in smiley:
+>* class name: SenseHat
+>* code example: self.sense_hat = SenseHat()
+>It is CamelCase which is preferred class naming by Pep8
+>
+>* method: low_light
+>* code example: self.sense_hat.low_light = dimmed
+>
+>* method: set_pixels
+>* code example: self.sense_hat.set_pixels(self.pixels)
+>Both examples above are Snake_case which is preferred methods naming by Pep8.
+>The method names are highly descriptive which readability is outlined in Pep8.
+>
+>SenseHat methods apply encapsulation principle which the code practices are aligned with Python Pep8 guideline.
 > 
 
 2. List three aspects of this convention you see applied in the code.
@@ -212,11 +225,14 @@ python3 main.py
   
   Use the following table for your answers:
 
+
 | Class Name | Super or Sub? | Direct parent(s) |
+   |-------------------------|----------------|------------------------------|
 | Smiley | Base class |  |
 | Blinkable | Base class           |     |
 |   Happy |   Sub         |      Smiley, Blinkable         |
 |   Sad  | Sub |  Smiley  |
+
 
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
@@ -256,7 +272,7 @@ Compare and contrast the classes Happy and Sad.
    > Smiley class directly use functionality of SenseHat.
    >
 2. Which of these classes directly interact with the SenseHat functionalities?
-   > Smiley class directly interteract with SenseHat. It creates an instance of SenseHat in constructor, use set_pixels method and use low_light property.
+   > Smiley class directly interact with SenseHat. It creates an instance of SenseHat in constructor, use set_pixels method and use low_light property.
    >
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
    > In the context of SenseHat, Smiley class apply the encapsulation principle of object oriented programming concept that restrict direct access. The Smiley class provide a mock implementation that hide the actual SenseHat functionalities under the show() method. It can prevent user misuse the SenseHat functionality and keep user away from complex details of SenseHat.
@@ -285,7 +301,7 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 4. How is inheritance used in the blink method, and why is it important for polymorphism?
 
-> Inheritance used in the blink() method under Happy class which inherited from Blinkable class. This is important for polymorphism because it allows different subclasses like Happy and potentially Sad class implement blink() while define their own specific behaviour. It promote code reusability, flexibility which allows different similey types to share consistent interface with unique logic.
+> Inheritance used in the blink() method under Happy class which inherited from Blinkable class. This is important for polymorphism because it allows different subclasses like Happy and potentially Sad class implement blink() while define their own specific behaviour. It promote code standard across sub classes, flexibility which allows different similey types to share consistent interface with unique logic.
 >
 1. **Implement Blink in Sad Class:**
 
@@ -293,7 +309,20 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
    ```python
    def blink(self, delay=0.25):
-       pass  # Replace 'pass' with your implementation
+        """
+       Blinks the smiley's eyes twice
+
+        :param delay: Delay between blinks (in seconds)
+        """
+        wide_open = True
+        for times in range(4):
+            if (wide_open):
+                wide_open = False
+            else:
+                wide_open = True
+            self.draw_eyes(wide_open)
+            self.show()
+            time.sleep(delay)
    ```
 
 2. **Code Implementation:** Implement the code that allows the Sad smiley to blink. Use the implementation from the Happy Smiley as a reference. Ensure your new method functions similarly by controlling the blink duration through the `delay` argument.
