@@ -28,7 +28,11 @@ class Happy(Smiley, Blinkable):
         """
         eyes = [10, 13, 18, 21]
         for pixel in eyes:
-            self.pixels[pixel] = self.BLANK if wide_open else self.YELLOW
+            if wide_open:
+                eyes_color = self.BLANK
+            else:
+                eyes_color = self.complexion()
+            self.pixels[pixel] = eyes_color
 
     def blink(self, delay=0.25):
         """

@@ -8,9 +8,9 @@ from happy import Happy
 from sad import Sad
 
 def main():
-    #smiley = Happy()
+    smiley = Happy()
 
-    smiley = Sad()
+    #smiley = Sad()
 
     smiley.show()
 

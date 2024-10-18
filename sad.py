@@ -25,10 +25,10 @@ class Sad(Smiley):
         eyes = [10, 13, 18, 21]
         for pixel in eyes:
             if wide_open:
-                eyes = self.BLANK
+                eyes_color = self.BLANK
             else:
-                eyes = self.YELLOW
-            self.pixels[pixel] = eyes
+                eyes_color = self.complexion()
+            self.pixels[pixel] = eyes_color
 
     def blink(self, delay=0.2):
         """

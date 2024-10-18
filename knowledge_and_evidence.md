@@ -333,11 +333,11 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 Include a screenshot of the sad smiley or the modified `main.py`:
 
-![Sad Smiley Blinking](screenshots/sad_blinking.png)
+![sad_face_output.png](screenshot/sad_face_output.png)
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 
-  > The updated Sad class implements the blink() method. The implementation use blink() method with default parameter for delay between blinks set to 0.25 seconds. It performs correctly from testing.
+  > The updated Sad class implements the blink() method. The implementation use blink() method with default parameter for delay between blinks set to 0.2 seconds. It performs correctly from testing.
 
   ### If It Walks Like a Duck…
 
